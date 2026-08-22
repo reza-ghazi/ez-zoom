@@ -24,4 +24,4 @@ Your settings (zoom amount, maximum zoom, animation speed, hold-key choice, hove
 
 ## Contact
 
-If you have any questions about this policy, contact: [YOUR EMAIL HERE]
+If you have any questions about this policy, contact: itprofessional@hotmail.ca
