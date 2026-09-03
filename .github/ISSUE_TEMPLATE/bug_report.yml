@@ -1,0 +1,89 @@
+name: Bug report
+description: Report a reproducible problem with EZ Zoom
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve EZ Zoom. Do not include passwords, authentication codes, private page content, or other sensitive information.
+  - type: input
+    id: extension-version
+    attributes:
+      label: EZ Zoom version
+      placeholder: "For example: 1.1.1"
+    validations:
+      required: true
+  - type: input
+    id: chrome-version
+    attributes:
+      label: Chrome version
+      description: Open chrome://settings/help to find the complete version number.
+      placeholder: "For example: 152.0.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - ChromeOS
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: zoom-method
+    attributes:
+      label: Zoom method
+      options:
+        - Hold key and hover
+        - Hold key and drag a rectangle
+        - Keyboard shortcut
+        - Settings popup
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: affected-url
+    attributes:
+      label: Affected webpage
+      description: Provide the URL only if it is public and safe to share.
+      placeholder: "https://example.com"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Hold ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any non-sensitive details that may help reproduce the problem.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I tested on a normal webpage rather than a protected chrome:// page or the Chrome Web Store.
+          required: true
+        - label: I refreshed the affected page after installing or updating EZ Zoom.
+          required: true

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "EZ Zoom",
-  "version": "1.1.0",
-  "description": "Zoom into any spot with your mouse. Hold Ctrl to magnify, drag a rectangle to zoom in, release to zoom out. Smooth and simple.",
+  "name": "EZ Zoom – Mouse Magnifier",
+  "version": "1.1.1",
+  "description": "Magnify any part of a webpage at your mouse pointer. Hold a key, drag an area, or use shortcuts for smooth, private zoom.",
   "permissions": ["storage"],
   "background": {
     "service_worker": "background.js"
