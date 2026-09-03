@@ -26,4 +26,4 @@ If Chrome Sync is enabled, Chrome may synchronize these preferences through your
 
 ## Contact
 
-For privacy questions, use [EZ Zoom Support](https://github.com/reza-ghazi/ez-zoom/issues).
+For privacy questions, email [contact@brightarcadia.com](mailto:contact@brightarcadia.com).
