@@ -56,6 +56,10 @@ Do not include passwords, authentication codes, private page content, or other s
 
 [Open a feature request](https://github.com/reza-ghazi/ez-zoom/issues/new?template=feature_request.yml)
 
+## Direct contact
+
+For privacy questions or matters that should not be posted publicly, email [contact@brightarcadia.com](mailto:contact@brightarcadia.com).
+
 ## Privacy
 
 EZ Zoom has no analytics, tracking, advertising, or developer-controlled servers. See the [Privacy Policy](PRIVACY.md) for details.
