@@ -1,29 +1,34 @@
-# EZ Zoom
+# EZ Zoom – Mouse Magnifier
 
 <img src="icons/icon128.png" width="96" align="right" alt="EZ Zoom icon">
 
-**Smoothly zoom in on any spot on a web page — hold Ctrl, point, zoom.**
+**Precision zoom exactly where you point.**
 
-EZ Zoom is a lightweight Chrome extension that magnifies exactly what you're looking at, right at your mouse pointer. No data collection, no tracking, no network requests — everything runs locally.
+EZ Zoom is a lightweight Chrome extension that provides smooth, pointer-centered webpage magnification. Hold a key to use the pointer like a magnifying glass, drag a rectangle to fit a selected area to the viewport, or use keyboard shortcuts for precise step-by-step zooming.
+
+EZ Zoom has no analytics, advertising, tracking, or direct connections to developer-controlled or third-party servers.
 
 ## Features
 
-### 🔍 Hold Ctrl + hover
-Hold the Ctrl key and the page smoothly zooms in at your pointer. By default the view follows your mouse like a magnifying glass. **Release Ctrl → zooms back out.**
+### 🔍 Hold a key and hover
 
-### ▭ Hold Ctrl + drag a rectangle
-Select any area of the page while holding Ctrl and it zooms to fit exactly that rectangle. **Release Ctrl → zooms back out.**
+Hold Ctrl by default and move the pointer to magnify the area beneath it. Release the key to return to the previous zoom level.
+
+### ▭ Hold a key and drag a rectangle
+
+Select any area of the page while holding the configured key. EZ Zoom fits the selected region to the viewport and returns when the key is released.
 
 ### ⌨️ Keyboard shortcuts
-Step-zoom anchored at your pointer. While zoomed this way the view stays **frozen** — moving the mouse never pans the page — until you choose to zoom again.
 
-| Action   | Default shortcut  |
-|----------|-------------------|
-| Zoom in  | `Alt + Shift + ↑` |
-| Zoom out | `Alt + Shift + ↓` |
-| Reset    | `Alt + Shift + X` |
+Apply pointer-anchored step zoom. The view remains fixed until the next zoom action.
 
-Remap any of them at `chrome://extensions/shortcuts`.
+| Action | Default shortcut |
+|---|---|
+| Zoom in | `Alt + Shift + Up` |
+| Zoom out | `Alt + Shift + Down` |
+| Reset | `Alt + Shift + X` |
+
+Shortcuts can be changed at `chrome://extensions/shortcuts`.
 
 ## Settings
 
@@ -31,33 +36,39 @@ Click the toolbar icon to configure:
 
 - **Hold key** — Ctrl, Alt, Shift, or Cmd/Win
 - **Hover zoom level** — 1.2× to 6×
-- **Follow pointer while held** — magnifier-style follow, or freeze at the first spot
-- **Zoom amount per press** — 1.1× to 3×
+- **Follow pointer while held** — magnifier-style movement or a fixed view
+- **Zoom amount per shortcut** — 1.1× to 3×
 - **Maximum zoom** — up to 20×
 - **Animation smoothness** — instant to extra smooth
 
 ## Install
 
-### From the Chrome Web Store
-*(link coming soon — pending review)*
+### Chrome Web Store
 
-### From source (developer mode)
-1. Clone or download this repository
-2. Open `chrome://extensions` in Chrome
-3. Enable **Developer mode** (top-right toggle)
-4. Click **Load unpacked** and select this folder
+[Install EZ Zoom from the Chrome Web Store](https://chromewebstore.google.com/detail/ez-zoom/njbbgpolfnghieffmiicbfcmapdakpdl)
+
+### From source
+
+1. Clone or download this repository.
+2. Open `chrome://extensions` in Chrome.
+3. Enable **Developer mode**.
+4. Select **Load unpacked** and choose the repository folder.
 
 ## How it works
 
-EZ Zoom applies a GPU-accelerated CSS transform to the page body, anchored at the mouse position, with smooth easing. Modifier-key gestures include safeguards so normal browser shortcuts (`Ctrl+C`, `Ctrl+T`, …) are never hijacked: a short hold delay, automatic cancellation when another key is pressed, and `Esc` to bail out.
+EZ Zoom applies a GPU-accelerated CSS transform to the page body, anchored at the mouse position, with smooth easing. Hold-key gestures include safeguards so normal browser shortcuts such as `Ctrl+C` and `Ctrl+T` are not intentionally intercepted: a short hold delay, cancellation when another key is pressed, and an Escape-key exit.
+
+Chrome does not permit extensions to operate on protected pages such as `chrome://` pages or the Chrome Web Store.
 
 ## Privacy
 
-EZ Zoom collects **no data whatsoever**. See [PRIVACY.md](PRIVACY.md).
+EZ Zoom collects no user data. Preferences are stored using Chrome's `chrome.storage.sync` API and may be synchronized by Chrome when Chrome Sync is enabled. See the [Privacy Policy](PRIVACY.md).
 
-## Bugs & feature requests
+## Support
 
-Please open an [issue](../../issues).
+Read the [support and troubleshooting guide](SUPPORT.md), [report a bug](https://github.com/reza-ghazi/ez-zoom/issues/new?template=bug_report.yml), or [request a feature](https://github.com/reza-ghazi/ez-zoom/issues/new?template=feature_request.yml).
+
+For privacy questions or private correspondence, email [contact@brightarcadia.com](mailto:contact@brightarcadia.com).
 
 ## License
 
