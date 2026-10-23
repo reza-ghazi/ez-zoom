@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — unreleased (prepared 2026-10-22)
+
+- Renamed to **EZ Zoom – Webpage Magnifier & Mouse Loupe** and rewrote the short description and store copy so people searching for a magnifier can find the extension.
+- One-time rating card in the settings popup, shown after 15 zooms; **Rate** and **No thanks** both dismiss it for good. The count is kept in `chrome.storage.local`, is never synced and never leaves the device.
+- **Sharper zoom:** zoomed pages are re-rendered at full resolution once the zoom animation ends, and in hover mode whenever the pointer rests. Previously text and graphics stayed blurry at high zoom.
+- Privacy policy and permissions docs describe the local count.
+- Demo recording of the real extension (`npm run demo`) for the README and a store promo video.
+
 ## 1.1.1 — 2026-09-02
 
 Store listing and support update. Extension code is unchanged from 1.1.0.

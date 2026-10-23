@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Demo</title>
+<style>
+body{margin:0;font:15px/1.6 Georgia,serif;background:#f8fafc;color:#0f172a}
+.wrap{max-width:1000px;margin:0 auto;padding:110px 40px 40px;display:grid;grid-template-columns:1fr 360px;gap:40px}
+h1{font:700 30px/1.2 system-ui,sans-serif;margin:0 0 10px}
+.fine{font-size:9px;line-height:1.35;color:#475569;border-top:1px solid #cbd5e1;padding-top:8px;margin-top:18px}
+figure{margin:0;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px}
+figcaption{font:600 11px system-ui;color:#64748b;margin-top:6px}
+table{border-collapse:collapse;font:10px system-ui;width:100%;margin-top:14px}td,th{border:1px solid #e2e8f0;padding:3px 5px;text-align:right}th{background:#f1f5f9}
+</style></head><body><div class="wrap"><main>
+<h1>Orbital resonances in the outer belt</h1>
+<p>Small bodies trapped in mean-motion resonances with a giant planet keep a stable phase relation over millions of orbits. The 3:2 resonance protects objects whose orbits cross the planet's path, because conjunctions always happen far from the crossing point.</p>
+<p>Survey data show a clear concentration of objects near the resonance centre, with a libration amplitude that shrinks as eccentricity grows. The table and diagram summarise the measured populations.</p>
+<table><tr><th>Resonance</th><th>a (AU)</th><th>Objects</th><th>Mean e</th><th>Libration (°)</th></tr>
+<tr><td>3:2</td><td>39.4</td><td>412</td><td>0.214</td><td>71.3</td></tr><tr><td>5:3</td><td>42.3</td><td>58</td><td>0.187</td><td>64.0</td></tr>
+<tr><td>7:4</td><td>43.7</td><td>44</td><td>0.142</td><td>55.8</td></tr><tr><td>2:1</td><td>47.7</td><td>96</td><td>0.271</td><td>82.5</td></tr></table>
+<p class="fine">Note 4. Semi-major axes are osculating values at epoch J2000.0 and were integrated for 10 Myr with a symplectic integrator using a 30-day step; objects whose resonant angle circulated during that time were removed. Libration amplitudes are half the peak-to-peak variation of the resonant angle. Values for the 7:4 population are affected by an observational bias toward low-inclination objects and should be read as lower limits. Uncertainties are one standard deviation of 200 clones per object.</p>
+</main><aside><figure><svg viewBox="0 0 320 260" width="100%">
+<circle cx="160" cy="130" r="9" fill="#f59e0b"/><g fill="none" stroke="#94a3b8"><circle cx="160" cy="130" r="40"/><circle cx="160" cy="130" r="72"/></g>
+<ellipse cx="170" cy="130" rx="112" ry="92" fill="none" stroke="#0ea5e9" stroke-width="1.5"/><ellipse cx="160" cy="130" rx="140" ry="118" fill="none" stroke="#6366f1" stroke-dasharray="4 3"/>
+<circle cx="232" cy="130" r="4" fill="#334155"/><text x="238" y="126" font-size="7" fill="#334155">planet</text>
+<circle cx="70" cy="70" r="3" fill="#0ea5e9"/><text x="40" y="62" font-size="6" fill="#0369a1">3:2 body, e = 0.21</text>
+<circle cx="283" cy="170" r="3" fill="#6366f1"/><text x="240" y="186" font-size="6" fill="#4338ca">2:1 body, e = 0.27</text>
+<text x="10" y="250" font-size="6" fill="#64748b">Not to scale. Positions at conjunction, t = 0.</text></svg>
+<figcaption>Figure 2. Resonant orbits at conjunction</figcaption></figure></aside></div></body></html>

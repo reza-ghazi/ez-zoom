@@ -33,6 +33,23 @@
     }
   });
 
+  // ---------- Usage count (local only; shows the popup's one-time rating card) ----------
+  const REVIEW_THRESHOLD = 15; // keep in sync with popup.js
+  let countDone = false;
+
+  function countUse() {
+    if (countDone) return;
+    try {
+      chrome.storage.local.get({ usageCount: 0 }, ({ usageCount }) => {
+        if (usageCount >= REVIEW_THRESHOLD) { countDone = true; return; }
+        chrome.storage.local.set({ usageCount: usageCount + 1 });
+      });
+    } catch {
+      // Extension was updated or removed; this orphaned script can't reach storage.
+      countDone = true;
+    }
+  }
+
   // ---------- Mouse tracking ----------
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -50,6 +67,7 @@
   let scale = 1;
   let tx = 0; // translation X (document px, applied after scale)
   let ty = 0; // translation Y
+  let settleTimer = null; // drops will-change once an animation has finished
 
   function target() {
     return document.body || null;
@@ -80,12 +98,22 @@
       if (dur > 0) setTimeout(cleanup, dur + 50);
       else cleanup();
     } else {
-      el.style.setProperty("will-change", "transform");
       el.style.setProperty(
         "transform",
         `translate(${tx}px, ${ty}px) scale(${scale})`,
         "important"
       );
+      // will-change keeps animation cheap but freezes the raster resolution, so a page
+      // left zoomed would stay blurry. Hold it only while animating or following the pointer.
+      clearTimeout(settleTimer);
+      if (dur > 0 || raf) {
+        el.style.setProperty("will-change", "transform");
+        settleTimer = setTimeout(() => {
+          if (!raf) el.style.removeProperty("will-change");
+        }, dur + 50);
+      } else {
+        el.style.removeProperty("will-change");
+      }
     }
   }
 
@@ -137,7 +165,7 @@
   function anchorX() { return haveMouse ? mouseX : window.innerWidth / 2; }
   function anchorY() { return haveMouse ? mouseY : window.innerHeight / 2; }
 
-  function zoomIn()  { zoomTo(scale * settings.step, anchorX(), anchorY()); }
+  function zoomIn()  { countUse(); zoomTo(scale * settings.step, anchorX(), anchorY()); }
   function zoomOut() { zoomTo(scale / settings.step, anchorX(), anchorY()); }
   function zoomReset() {
     scale = 1; tx = 0; ty = 0;
@@ -213,6 +241,7 @@
     if (session) return;
     session = { saved: { scale, tx, ty }, mode: "hover" };
     const zl = Math.max(1.1, settings.hoverZoom);
+    countUse();
 
     if (settings.follow) {
       // Smooth magnifier: animate scale + pan toward the pointer every frame.
@@ -233,12 +262,22 @@
         let tyT = (1 - S) * (anchorY() + sy);
         [txT, tyT] = clampT(S, txT, tyT);
 
-        cur.s += (S - cur.s) * k;
-        cur.x += (txT - cur.x) * k;
-        cur.y += (tyT - cur.y) * k;
+        const moving = Math.abs(S - cur.s) > 0.001 ||
+          Math.abs(txT - cur.x) > 0.3 || Math.abs(tyT - cur.y) > 0.3;
+        if (moving) {
+          cur.s += (S - cur.s) * k;
+          cur.x += (txT - cur.x) * k;
+          cur.y += (tyT - cur.y) * k;
+        } else {
+          cur = { s: S, x: txT, y: tyT };
+        }
 
-        scale = cur.s; tx = cur.x; ty = cur.y;
-        applyTransform(false);
+        if (moving || scale !== cur.s || tx !== cur.x || ty !== cur.y) {
+          scale = cur.s; tx = cur.x; ty = cur.y;
+          applyTransform(false);
+          // Pointer at rest: drop will-change so Chrome re-rasters sharply until it moves.
+          if (!moving && el) el.style.removeProperty("will-change");
+        }
         raf = requestAnimationFrame(loop);
       };
       raf = requestAnimationFrame(loop);
@@ -413,6 +452,7 @@
     }
 
     if (session) session.mode = "rectZoomed";
+    countUse();
     zoomToRect(x0, y0, x1, y1);
   }, true);
 

@@ -1,6 +1,6 @@
 # Chrome Web Store Listing — EZ Zoom
 
-The approved, live metadata and copy for **EZ Zoom – Mouse Magnifier**. Published version: **1.1.1** (item ID `njbbgpolfnghieffmiicbfcmapdakpdl`). Update this file whenever the dashboard listing changes so it stays the source of truth.
+Metadata and copy for **EZ Zoom – Webpage Magnifier & Mouse Loupe** (item ID `njbbgpolfnghieffmiicbfcmapdakpdl`). This file matches version **1.2.0**; the store shows 1.1.1 ("EZ Zoom – Mouse Magnifier") until 1.2.0 is uploaded and approved. Update this file whenever the dashboard listing changes so it stays the source of truth.
 
 ## Package metadata
 
@@ -9,13 +9,13 @@ The following values come from `src/manifest.json` and appear in Chrome and the 
 **Name**
 
 ```text
-EZ Zoom – Mouse Magnifier
+EZ Zoom – Webpage Magnifier & Mouse Loupe
 ```
 
-**Summary** — 121 characters
+**Summary** — 131 characters (max 132)
 
 ```text
-Magnify any part of a webpage at your mouse pointer. Hold a key, drag an area, or use shortcuts for smooth, private zoom.
+Magnify any part of a webpage at your mouse cursor: hover loupe, drag-to-zoom and keyboard shortcuts. Smooth, private, no tracking.
 ```
 
 ## Store listing fields
@@ -35,34 +35,37 @@ English
 **Detailed description**
 
 ```text
-Magnify exactly what you want—without changing Chrome's normal page-zoom setting.
+A webpage magnifier for Chrome that zooms exactly where your mouse points — without changing Chrome's page zoom or breaking the page layout.
 
-EZ Zoom – Mouse Magnifier provides smooth, pointer-centered magnification for webpages. Hold a key to temporarily magnify the area beneath your mouse, drag a rectangle to fit a selected region to the viewport, or use keyboard shortcuts for precise step-by-step zooming.
+EZ Zoom works like a loupe for the web. Hold a key to magnify the area under your cursor, drag a rectangle to zoom into one region, or use keyboard shortcuts for precise step zoom. Release the key and the page returns to normal.
 
 THREE WAYS TO ZOOM
 
-- Hold and hover: Hold Ctrl by default and move the pointer like a magnifying glass. Release the key to return to the previous zoom level.
-- Area zoom: Hold the configured key and drag around a region to fit it to the viewport.
-- Keyboard zoom: Zoom in and out around the mouse pointer using configurable shortcuts.
+- Hover zoom: hold Ctrl (or a key you choose) and move the mouse. The magnified view follows your cursor like a magnifying glass.
+- Drag-to-zoom: hold the key and drag around any region — a chart, a diagram, a block of small text — to fit it to the window.
+- Keyboard zoom: zoom in and out around the mouse pointer with shortcuts you can remap.
+
+WHO IT'S FOR
+
+- Reading small fonts and fine print without enlarging the whole page
+- Low vision and accessibility: magnify one spot of a web page instead of the entire screen
+- Web designers, front-end developers and QA: inspect icons, typography and alignment without triggering responsive breakpoints
+- Presenters and teachers: zoom into code, spreadsheets or buttons while screen sharing
+- Looking closely at photos, maps and diagrams
 
 FULLY CUSTOMIZABLE
 
 - Choose Ctrl, Alt, Shift, or Cmd/Win as the activation key.
-- Set hover magnification from 1.2× to 6×.
-- Set shortcut zoom increments from 1.1× to 3×.
-- Set the maximum zoom up to 20×.
-- Adjust animation from instant to extra smooth.
-- Remap Chrome keyboard shortcuts.
+- Hover magnification from 1.2× to 6×; maximum zoom up to 20×.
+- Shortcut zoom steps from 1.1× to 3×.
+- Animation from instant to extra smooth.
+- Follow the pointer, or freeze the magnified view in place.
 
 PRIVATE BY DESIGN
 
-EZ Zoom does not collect browsing data, page content, keystrokes, or personal information. It contains no analytics, advertising, telemetry, or tracking and makes no direct network requests to developer-controlled or third-party servers. Preferences are stored using Chrome's settings storage and may be synchronized by Chrome when Chrome Sync is enabled.
+EZ Zoom does not collect browsing data, page content, keystrokes, or personal information. It contains no analytics, advertising, telemetry, or tracking and makes no network requests. Preferences are stored with Chrome's settings storage and may be synchronized by Chrome Sync.
 
-USEFUL FOR
-
-Reading small text, examining photographs and diagrams, presentations, screen sharing, accessibility, web development, and design review.
-
-Chrome does not allow extensions to operate on protected pages such as chrome:// pages or the Chrome Web Store.
+Chrome does not allow extensions to run on protected pages such as chrome:// pages or the Chrome Web Store.
 ```
 
 ## Public URLs
@@ -108,7 +111,7 @@ EZ Zoom provides user-controlled magnification of webpage content at the mouse p
 **Storage permission**
 
 ```text
-The storage permission is used only to save the user's zoom preferences, including zoom level, maximum zoom, animation duration, activation key, and pointer-follow setting. Chrome may synchronize these preferences when Chrome Sync is enabled.
+The storage permission is used only to save the user's zoom preferences (zoom level, maximum zoom, animation duration, activation key, pointer-follow setting), which Chrome may synchronize when Chrome Sync is enabled, and a local count of zoom uses (capped at 15) that decides when to show a one-time, dismissible rating suggestion in the popup. Nothing is transmitted.
 ```
 
 **Broad host access / content scripts**
@@ -143,6 +146,10 @@ All screenshots are 1280 × 800 and show the extension's real behavior. Upload t
 | Marquee | `store/promo-marquee-1400x560.png` | — |
 
 Screenshots must not show private information, misleading composites, excessive text, browser-store branding, or features the extension does not provide. If the popup or behavior changes, regenerate the affected images.
+
+## Promo video
+
+The store accepts a YouTube link in **Store listing → Global promo video**. Upload `release/ez-zoom-demo.mp4` (made by `npm run demo`, ~30 s, no audio) to YouTube as *Public* or *Unlisted*, then paste the link there. The same recording is in the README as `store/demo/ez-zoom-demo.gif`. Re-record after any visible behavior or popup change.
 
 ## Test instructions (dashboard → Access)
 

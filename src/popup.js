@@ -68,3 +68,22 @@ for (const el of [holdEnabledEl, modifierEl, followEl]) {
 $("editShortcuts").addEventListener("click", () => {
   chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
 });
+
+// ---------- One-time rating card ----------
+// Shown after REVIEW_THRESHOLD zooms (counted locally by content.js); either button hides it for good.
+const REVIEW_THRESHOLD = 15; // keep in sync with content.js
+const REVIEW_URL = "https://chromewebstore.google.com/detail/ez-zoom/njbbgpolfnghieffmiicbfcmapdakpdl/reviews";
+
+chrome.storage.local.get({ usageCount: 0, reviewCardDone: false }, ({ usageCount, reviewCardDone }) => {
+  $("reviewCard").hidden = reviewCardDone || usageCount < REVIEW_THRESHOLD;
+});
+
+function closeReviewCard() {
+  chrome.storage.local.set({ reviewCardDone: true });
+  $("reviewCard").hidden = true;
+}
+$("rateReview").addEventListener("click", () => {
+  closeReviewCard();
+  chrome.tabs.create({ url: REVIEW_URL });
+});
+$("dismissReview").addEventListener("click", closeReviewCard);

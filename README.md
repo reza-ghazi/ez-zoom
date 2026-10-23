@@ -1,4 +1,4 @@
-# EZ Zoom – Mouse Magnifier
+# EZ Zoom – Webpage Magnifier & Mouse Loupe
 
 <img src="src/icons/icon128.png" width="96" align="right" alt="EZ Zoom icon">
 
@@ -8,7 +8,7 @@ EZ Zoom is a lightweight Chrome extension that provides smooth, pointer-centered
 
 EZ Zoom has no analytics, advertising, tracking, or direct connections to developer-controlled or third-party servers.
 
-<img src="store/screenshots/1-hold-key-magnification.png" alt="Hold Ctrl and the page magnifies exactly where you point" width="100%">
+<img src="store/demo/ez-zoom-demo.gif" alt="Demo: hold Ctrl to magnify under the pointer, drag a rectangle to zoom into a diagram, and step-zoom with keyboard shortcuts" width="100%">
 
 ## Features
 
@@ -80,13 +80,13 @@ For privacy questions or private correspondence, email [contact@brightarcadia.co
 
 # For developers
 
-No build step and no dependencies: `src/` is exactly what ships. Node.js 22+ is only needed for the release scripts.
+No build step and no runtime dependencies: `src/` is exactly what ships. Node.js 22+ is only needed for the scripts below.
 
 ```
 src/            the extension (manifest, service worker, content script, popup, icons)
-store/          Chrome Web Store listing copy, screenshots and promo tiles
+store/          Chrome Web Store listing copy, screenshots, promo tiles and demo GIF
 docs/           architecture, permissions, release checklist
-scripts/        check + package scripts
+scripts/        check, package and demo-recording scripts
 .github/        issue forms
 ```
 
@@ -94,5 +94,6 @@ scripts/        check + package scripts
 |---|---|
 | `npm run check` | Validates the manifest, referenced files, JS syntax, permissions and the CHANGELOG version |
 | `npm run package` | Runs the check, audits `src/` (no network APIs, `eval` or remote code) and writes a reproducible `release/ez-zoom-<version>.zip` with SHA-256 checksums |
+| `npm run demo` | Records the real extension in Playwright's Chromium (`npm ci` + `npx playwright install chromium` first; needs `ffmpeg`) → `store/demo/ez-zoom-demo.gif` and `release/ez-zoom-demo.mp4` |
 
 The version lives only in `src/manifest.json`. See [architecture](docs/architecture.md), [permissions explained](docs/permissions.md), the [release checklist](docs/release-checklist.md) and the [changelog](CHANGELOG.md).
