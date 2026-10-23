@@ -1,12 +1,14 @@
 # EZ Zoom – Mouse Magnifier
 
-<img src="icons/icon128.png" width="96" align="right" alt="EZ Zoom icon">
+<img src="src/icons/icon128.png" width="96" align="right" alt="EZ Zoom icon">
 
 **Precision zoom exactly where you point.**
 
 EZ Zoom is a lightweight Chrome extension that provides smooth, pointer-centered webpage magnification. Hold a key to use the pointer like a magnifying glass, drag a rectangle to fit a selected area to the viewport, or use keyboard shortcuts for precise step-by-step zooming.
 
 EZ Zoom has no analytics, advertising, tracking, or direct connections to developer-controlled or third-party servers.
+
+<img src="store/screenshots/1-hold-key-magnification.png" alt="Hold Ctrl and the page magnifies exactly where you point" width="100%">
 
 ## Features
 
@@ -52,7 +54,7 @@ Click the toolbar icon to configure:
 1. Clone or download this repository.
 2. Open `chrome://extensions` in Chrome.
 3. Enable **Developer mode**.
-4. Select **Load unpacked** and choose the repository folder.
+4. Select **Load unpacked** and choose the `src/` folder.
 
 ## How it works
 
@@ -73,3 +75,24 @@ For privacy questions or private correspondence, email [contact@brightarcadia.co
 ## License
 
 [MIT](LICENSE)
+
+---
+
+# For developers
+
+No build step and no dependencies: `src/` is exactly what ships. Node.js 22+ is only needed for the release scripts.
+
+```
+src/            the extension (manifest, service worker, content script, popup, icons)
+store/          Chrome Web Store listing copy, screenshots and promo tiles
+docs/           architecture, permissions, release checklist
+scripts/        check + package scripts
+.github/        issue forms
+```
+
+| Command | What it does |
+|---|---|
+| `npm run check` | Validates the manifest, referenced files, JS syntax, permissions and the CHANGELOG version |
+| `npm run package` | Runs the check, audits `src/` (no network APIs, `eval` or remote code) and writes a reproducible `release/ez-zoom-<version>.zip` with SHA-256 checksums |
+
+The version lives only in `src/manifest.json`. See [architecture](docs/architecture.md), [permissions explained](docs/permissions.md), the [release checklist](docs/release-checklist.md) and the [changelog](CHANGELOG.md).
