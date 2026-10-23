@@ -1,0 +1,22 @@
+{
+  "name": "ez-zoom",
+  "private": true,
+  "description": "EZ Zoom – Mouse Magnifier (Chrome extension). The extension version lives in src/manifest.json.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "homepage": "https://github.com/reza-ghazi/ez-zoom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reza-ghazi/ez-zoom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reza-ghazi/ez-zoom/issues"
+  }
+}

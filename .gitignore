@@ -1,3 +1,13 @@
+# Build output and local-only material
+release/
+private/
+node_modules/
 *.zip
+*.log
+
+# Local agent notes (kept out of the public repo)
+CLAUDE.md
+
+# OS files
 .DS_Store
 Thumbs.db

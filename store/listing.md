@@ -1,10 +1,10 @@
 # Chrome Web Store Listing — EZ Zoom
 
-This document contains the approved metadata and copy for **EZ Zoom – Mouse Magnifier**, version **1.1.1**.
+The approved, live metadata and copy for **EZ Zoom – Mouse Magnifier**. Published version: **1.1.1** (item ID `njbbgpolfnghieffmiicbfcmapdakpdl`). Update this file whenever the dashboard listing changes so it stays the source of truth.
 
 ## Package metadata
 
-The following values come from `manifest.json` and appear in Chrome and the Chrome Web Store.
+The following values come from `src/manifest.json` and appear in Chrome and the Chrome Web Store.
 
 **Name**
 
@@ -127,32 +127,27 @@ EZ Zoom does not use remote code. All executable code is included in the extensi
 
 Select the dashboard options indicating that no user data is collected or transmitted. Confirm that the declarations match the current source code before each release.
 
-## Screenshot plan
+## Graphic assets
 
-Use five actual screenshots at **1280 × 800 px**.
+All screenshots are 1280 × 800 and show the extension's real behavior. Upload them in this order.
 
-| Position | Demonstration | Suggested caption |
+| Position | File | Caption shown in image |
 |---|---|---|
-| 1 | Hold Ctrl and magnify beneath the pointer | Precision zoom exactly where you point |
-| 2 | Drag a visible selection rectangle | Select any region and fit it to your screen |
-| 3 | Use the keyboard shortcuts with the zoom badge visible | Precise keyboard zoom centered at the pointer |
-| 4 | Show the complete settings popup | Customize the key, magnification, limit, and animation |
-| 5 | Show a practical diagram or small-text use case | Read text and inspect images without changing page zoom |
+| Icon | `src/icons/icon128.png` | — |
+| 1 | `store/screenshots/1-hold-key-magnification.png` | Precision zoom exactly where you point |
+| 2 | `store/screenshots/2-rectangle-selection.png` | Select a region and fit it to the screen |
+| 3 | `store/screenshots/3-keyboard-shortcuts.png` | Zoom in, zoom out, or reset instantly |
+| 4 | `store/screenshots/4-settings-popup.png` | Tune magnification to your workflow |
+| 5 | `store/screenshots/5-privacy.png` | Magnification without tracking |
+| Small promo tile | `store/promo-small-440x280.png` | — |
+| Marquee | `store/promo-marquee-1400x560.png` | — |
 
-Screenshots must show the extension's real behavior. Avoid private information, misleading composites, excessive text, browser-store branding, or claims that the extension does not provide.
+Screenshots must not show private information, misleading composites, excessive text, browser-store branding, or features the extension does not provide. If the popup or behavior changes, regenerate the affected images.
 
-## Publication checklist
+## Test instructions (dashboard → Access)
 
-1. Merge the reviewed pull request.
-2. Download or clone the updated `main` branch.
-3. Create a ZIP containing the extension files at the root of the archive.
-4. Test the unpacked extension in a separate Chrome profile.
-5. In the Chrome Web Store Developer Dashboard, open EZ Zoom.
-6. Upload the version 1.1.1 ZIP under **Package**.
-7. Paste the detailed description under **Store listing**.
-8. Upload the five screenshots in the intended order.
-9. Set the homepage, support, and privacy-policy URLs.
-10. Review the **Privacy practices** declarations and permission justifications.
-11. Save the draft and preview the public listing.
-12. Submit the update for review.
-13. After publication, test installation, all three zoom modes, settings persistence, the support links, and the displayed version in a signed-out or Incognito window.
+None needed: EZ Zoom has no login or setup. Leave credentials empty.
+
+## Publishing a new version
+
+Follow [docs/release-checklist.md](../docs/release-checklist.md).
