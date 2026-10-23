@@ -43,6 +43,8 @@ Stored in `chrome.storage.sync`. Defaults are duplicated in `content.js` and `po
 | `hoverZoom` | 2 | 1.2–6 |
 | `follow` | true | |
 
+`chrome.storage.local` (never synced) holds two more keys: `usageCount`, incremented by `countUse()` in `content.js` on each hover zoom, area zoom and zoom-in shortcut and capped at `REVIEW_THRESHOLD` (15), and `reviewCardDone`. The popup shows a one-time rating card when the count reaches the threshold; either of its buttons sets `reviewCardDone`. `REVIEW_THRESHOLD` is defined in both `content.js` and `popup.js`.
+
 ## Limits
 
 Chrome does not run extensions on `chrome://` pages, the Chrome Web Store or (by default) local files. Pages open before install or update need a reload. Sites with their own transforms on `<body>`, fullscreen layers or canvas rendering may behave differently.

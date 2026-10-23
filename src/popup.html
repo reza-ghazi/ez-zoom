@@ -72,6 +72,11 @@
   }
   .saved.show { opacity: 1; }
   .dim { opacity: .45; pointer-events: none; }
+  [hidden] { display: none !important; }
+  .review { border: 1px solid #38bdf8; }
+  .review p { font-size: 13px; margin-bottom: 10px; }
+  button.primary { background: #38bdf8; color: #0f172a; }
+  button.primary:hover { background: #7dd3fc; }
 </style>
 </head>
 <body>
@@ -79,6 +84,14 @@
     <img src="icons/icon48.png" alt="">
     <h1>EZ Zoom</h1>
   </header>
+
+  <div class="card review" id="reviewCard" hidden>
+    <p>Enjoying EZ Zoom? A rating on the Chrome Web Store helps other people find it.</p>
+    <div class="row">
+      <button id="rateReview" class="primary">Rate EZ Zoom</button>
+      <button id="dismissReview">No thanks</button>
+    </div>
+  </div>
 
   <div class="card">
     <h2>Hold-key zoom</h2>

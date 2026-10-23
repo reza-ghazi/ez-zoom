@@ -4,7 +4,7 @@ EZ Zoom requests the smallest set of permissions it can work with. `npm run chec
 
 | Manifest entry | Why it is needed | What it is not used for |
 |---|---|---|
-| `storage` | Save your zoom preferences in `chrome.storage.sync` so they persist and, if Chrome Sync is on, follow you to other devices | Storing page content, history or keystrokes |
+| `storage` | Save your zoom preferences in `chrome.storage.sync` so they persist and, if Chrome Sync is on, follow you to other devices. Keep a local zoom count (`chrome.storage.local`, capped at 15) for the one-time rating card | Storing page content, history or keystrokes |
 | Content script on `<all_urls>` | Apply the visual zoom transform to the page you are viewing and read the mouse position and modifier-key state used for gestures | Reading, storing or sending page content |
 | `commands` (keyboard shortcuts) | Zoom in / out / reset from the keyboard; remappable at `chrome://extensions/shortcuts` | — (not a permission; shows no warning) |
 

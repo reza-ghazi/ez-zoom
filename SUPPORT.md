@@ -1,6 +1,6 @@
 # EZ Zoom Support
 
-Thank you for using **EZ Zoom – Mouse Magnifier**.
+Thank you for using **EZ Zoom – Webpage Magnifier & Mouse Loupe**.
 
 ## Quick help
 
@@ -17,7 +17,7 @@ Chrome does not allow extensions to modify protected pages such as `chrome://` p
 ### Keyboard shortcuts do not work
 
 1. Open `chrome://extensions/shortcuts`.
-2. Find **EZ Zoom – Mouse Magnifier**.
+2. Find **EZ Zoom – Webpage Magnifier & Mouse Loupe**.
 3. Check that the desired shortcuts are assigned and do not conflict with another extension or operating-system shortcut.
 
 Default shortcuts:
@@ -30,7 +30,7 @@ Default shortcuts:
 
 ### EZ Zoom does not work in Incognito mode
 
-Open `chrome://extensions`, select **EZ Zoom – Mouse Magnifier**, and enable **Allow in Incognito**. Chrome leaves this permission disabled by default.
+Open `chrome://extensions`, select **EZ Zoom – Webpage Magnifier & Mouse Loupe**, and enable **Allow in Incognito**. Chrome leaves this permission disabled by default.
 
 ### A particular website behaves incorrectly
 

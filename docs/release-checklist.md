@@ -11,6 +11,7 @@
 - [ ] Load `src/` unpacked in a fresh Chrome profile: no errors on `chrome://extensions`
 - [ ] Hold-key hover (follow on and off), area zoom, all three shortcuts, Esc cancel, Ctrl+C / Ctrl+T pass through
 - [ ] Popup: every control saves and applies live in an open tab
+- [ ] If visible behavior changed: `npm run demo` and review the new GIF/MP4
 
 ## Submit
 - [ ] Chrome Web Store Developer Dashboard → EZ Zoom → **Package** → upload `release/ez-zoom-<version>.zip`

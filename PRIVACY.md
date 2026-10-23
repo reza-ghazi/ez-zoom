@@ -1,6 +1,6 @@
 # EZ Zoom — Privacy Policy
 
-_Last updated: September 3, 2026_
+_Last updated: October 22, 2026_
 
 EZ Zoom is a browser extension that lets you zoom in on web pages using your mouse pointer, keyboard shortcuts, and a hold-key gesture.
 
@@ -19,9 +19,13 @@ Your preferences—including zoom amount, maximum zoom, animation speed, hold-ke
 
 If Chrome Sync is enabled, Chrome may synchronize these preferences through your Google account so they are available in Chrome on your other devices. This synchronization is handled by Chrome; EZ Zoom's developer does not receive or have access to the synchronized settings.
 
+## Local usage count
+
+EZ Zoom keeps a simple count of how many times you have zoomed, up to 15, using Chrome's `chrome.storage.local` API. It is used only to decide when to show a one-time suggestion to rate the extension in its settings popup, and whether you have already dismissed it. The count stays on your device: it is not synchronized, contains no information about the pages you visit, and is never transmitted.
+
 ## Permissions explained
 
-- **Storage** — used solely to save and synchronize your zoom preferences through Chrome.
+- **Storage** — used solely to save and synchronize your zoom preferences through Chrome, and to keep the local usage count described above.
 - **Access to web pages (content script)** — required to apply the visual zoom transformation to the webpage you are viewing and to detect the mouse position and modifier-key state used for zoom gestures. No webpage content is stored or transmitted.
 
 ## Contact

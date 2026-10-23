@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "EZ Zoom – Mouse Magnifier",
-  "version": "1.1.1",
-  "description": "Magnify any part of a webpage at your mouse pointer. Hold a key, drag an area, or use shortcuts for smooth, private zoom.",
+  "name": "EZ Zoom – Webpage Magnifier & Mouse Loupe",
+  "version": "1.2.0",
+  "description": "Magnify any part of a webpage at your mouse cursor: hover loupe, drag-to-zoom and keyboard shortcuts. Smooth, private, no tracking.",
   "permissions": ["storage"],
   "background": {
     "service_worker": "background.js"
