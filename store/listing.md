@@ -1,6 +1,6 @@
 # Chrome Web Store Listing — EZ Zoom
 
-Metadata and copy for **EZ Zoom – Webpage Magnifier & Mouse Loupe** (item ID `njbbgpolfnghieffmiicbfcmapdakpdl`). This file matches version **1.2.0**; the store shows 1.1.1 ("EZ Zoom – Mouse Magnifier") until 1.2.0 is uploaded and approved. Update this file whenever the dashboard listing changes so it stays the source of truth.
+Metadata and copy for **EZ Zoom – Webpage Magnifier & Mouse Loupe** (item ID `njbbgpolfnghieffmiicbfcmapdakpdl`). Published version: **1.2.0** (live 2026-10-26). Update this file whenever the dashboard listing changes so it stays the source of truth.
 
 ## Package metadata
 
@@ -149,7 +149,11 @@ Screenshots must not show private information, misleading composites, excessive 
 
 ## Promo video
 
-The store accepts a YouTube link in **Store listing → Global promo video**. Upload `release/ez-zoom-demo.mp4` (made by `npm run demo`, ~30 s, no audio) to YouTube as *Public* or *Unlisted*, then paste the link there. The same recording is in the README as `store/demo/ez-zoom-demo.gif`. Re-record after any visible behavior or popup change.
+The store accepts a YouTube link in **Store listing → Global promo video**. Upload `release/ez-zoom-demo.mp4` (made by `npm run demo`, ~30 s, no audio) to YouTube as *Public* or *Unlisted*, then paste the link there.
+
+Current video (public, uploaded 2026-10-22, on the Bright Arcadia channel): https://www.youtube.com/watch?v=DBvJx63QC9U
+
+The same recording is in the README as `store/demo/ez-zoom-demo.gif`. Re-record after any visible behavior or popup change.
 
 ## Test instructions (dashboard → Access)
 
